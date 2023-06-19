@@ -8,9 +8,8 @@ public class Physician extends User implements HIPAACompliantUser{
     private ArrayList<String> patientNotes;
 	
     // TO DO: Constructor that takes an ID
-    public Physician(ArrayList<String> patientNotes) {
+    public Physician(Integer id) {
     	super();
-    	this.id = id;
     	this.patientNotes = new ArrayList<>();
     }
     
@@ -23,6 +22,25 @@ public class Physician extends User implements HIPAACompliantUser{
         report += String.format("Patient Name: %s\n", patientName);
         report += String.format("Notes: %s \n", notes);
         this.patientNotes.add(report);
+    }
+    
+    public boolean assignPin(int pin) {
+    	int pinLength = String.valueOf(pin).length();
+    	if(pinLength == 4 ) {
+    		this.setPin(pin);
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }
+    
+    public boolean accessAuthorized(Integer confirmedAuthID) {
+    	int thisId = this.getId();
+    	if (thisId == confirmedAuthID){
+    		return true;
+    	} else {
+    		return false;
+    	}
     }
 
 

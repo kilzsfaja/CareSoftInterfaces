@@ -30,6 +30,14 @@ public class AdminUser extends User implements HIPAACompliantAdmin, HIPAAComplia
     	}
     	return false;
     }
+    
+    public ArrayList<String>reportSecurityIncidents(){
+    	for(String incident : securityIncidents) {
+    		System.out.println(incident);
+    	}
+    	return securityIncidents;
+    }
+    
 	public void newIncident(String notes) {
         String report = String.format(
             "Datetime Submitted: %s \n,  Reported By ID: %s\n Notes: %s \n", 

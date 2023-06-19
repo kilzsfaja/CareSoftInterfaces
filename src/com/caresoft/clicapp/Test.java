@@ -5,8 +5,8 @@ public class Test {
 	public static void main(String[] args) {
 		// .. Main method setup ... //
         Physician doctor10 = new Physician(1);
-        AdminUser roseTyler = new AdminUser(2, "Companion");
-        AdminUser donnaNoble = new AdminUser(3, "Companion");
+        AdminUser roseTyler = new AdminUser(20, "Companion");
+        AdminUser donnaNoble = new AdminUser(30, "Companion");
         
         
         // Physician Implementation Tests
